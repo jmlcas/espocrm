@@ -1,7 +1,7 @@
 services:
 
   mysql:
-    image: mariadb
+    image: mariadb:latest
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root_password
@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   espocrm:
-    image: espocrm/espocrm
+    image: espocrm/espocrm:latest
     container_name: espocrm
     environment:
       ESPOCRM_DATABASE_PLATFORM: Mysql
@@ -34,7 +34,7 @@ services:
       - "8200:80"
 
   espocrm-daemon:
-    image: espocrm/espocrm
+    image: espocrm/espocrm:latest
     container_name: espocrm-daemon
     volumes:
       - ./espocrm:/var/www/html
@@ -44,7 +44,7 @@ services:
     entrypoint: docker-daemon.sh
 
   espocrm-websocket:
-    image: espocrm/espocrm
+    image: espocrm/espocrm:latest
     container_name: espocrm-websocket
     environment:
       ESPOCRM_CONFIG_USE_WEB_SOCKET: "true"
