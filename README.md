@@ -1,5 +1,4 @@
-# espocrm
-EspoCRM - Docker-compose
+# EspoCRM
 
 Ver en "http://localhost:8200"
 
